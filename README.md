@@ -11,7 +11,7 @@ npm install fifo
 ## Usage
 
 ``` js
-var fifo = require('fifo')()
+var fifo = require('fifo')(Capacity)
 
 fifo.push('hello')
 fifo.push('world')

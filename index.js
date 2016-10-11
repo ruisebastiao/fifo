@@ -10,10 +10,11 @@ Node.prototype.link = function (next) {
   return next
 }
 
-function FIFO () {
+function FIFO (capacity) {
   if (!(this instanceof FIFO)) return new FIFO()
   this.node = null
   this.length = 0
+  this.capacity =capacity? null : 0
 }
 
 FIFO.prototype.set = function (node, value) {
@@ -63,6 +64,7 @@ FIFO.prototype.bump = function (node) {
 
 FIFO.prototype.add = function (node) {
   this.length++
+  if(this.length>this.capacity) this.pop();
   if (!node.list) node.list = this
   if (!this.node) return this.node = node
   this.node.prev.link(node)

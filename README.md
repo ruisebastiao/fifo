@@ -11,7 +11,7 @@ npm install fifo
 ## Usage
 
 ``` js
-var fifo = require('fifo')(Capacity)
+var fifo = require('fifo')()
 
 fifo.push('hello')
 fifo.push('world')
@@ -32,7 +32,7 @@ fifo.unshift('hello') // insert at the beginning
 
 ## API
 
-#### `fifo = FIFO()`
+#### `fifo = FIFO(Capacity)`
 
 Create a new instance
 
